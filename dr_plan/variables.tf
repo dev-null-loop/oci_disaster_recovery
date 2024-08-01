@@ -1,18 +1,3 @@
-variable "tenancy_ocid" {
-  description = "(Required) Tenancy OCID"
-  type        = string
-}
-
-variable "region_this" {
-  description = "(Required) this DR protection group region"
-  type        = string
-}
-
-variable "region_that" {
-  description = "(Required) that DR protection group region"
-  type        = string
-}
-
 variable "display_name" {
   description = "(Required) (Updatable) The display name of the DR plan being created.  Example: `EBS Switchover PHX to IAD`"
   type        = string
