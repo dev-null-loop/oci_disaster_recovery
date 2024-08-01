@@ -1,0 +1,12 @@
+while true; do
+    ROLE=$(oci disaster-recovery dr-protection-group get --dr-protection-group-id ${dr_protection_group_id} --region ${region} | jq -r '.data.role')
+    if [ "$ROLE" == "UNCONFIGURED" ]; then
+	echo "${dr_protection_group_id} is not associated..."
+	break
+    else
+	echo "Disassociating ${dr_protection_group_id}..."
+	oci disaster-recovery dr-protection-group disassociate --type DEFAULT --dr-protection-group-id  ${dr_protection_group_id}
+	sleep 10
+	break
+    fi
+done
