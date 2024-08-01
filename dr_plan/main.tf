@@ -20,12 +20,12 @@ resource "oci_disaster_recovery_dr_plan" "this" {
   lifecycle {
     precondition {
       condition     = !contains(["DELETED"], local.role)
-      error_message = "Error: DR Protection Group ${var.dr_protection_group_id} cannot be used (DELETED)."
+      error_message = "Error: ${var.dr_protection_group_id} cannot be used (DELETED)."
     }
 
     precondition {
       condition     = contains(["STANDBY"], local.role)
-      error_message = "Error: DR Protection Group ${var.dr_protection_group_id} does not have a STANDBY role."
+      error_message = "Error: ${var.dr_protection_group_id} does not have a STANDBY role."
     }
   }
 }
