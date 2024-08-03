@@ -29,12 +29,3 @@ resource "oci_disaster_recovery_dr_plan" "this" {
     }
   }
 }
-
-# *ISSUE* data.oci_disaster_recovery_dr_protection_group DOES NOT DETECT DELETED drpgs
-# data.oci_disaster_recovery_dr_protection_group.this: Read complete after 1s [id=ocid1.drprotectiongroup.oc1.eu-amsterdam-1.aaaaaaaanfdw4ic2ln7lnns5j4baj6xjcbgubweu5z44wplft46dw53w4wrq]
-# │ Error: Resource precondition failed
-# │   on main.tf line 20, in resource "oci_disaster_recovery_dr_plan" "this":
-# │   20:       condition     = contains(["STANDBY"], local.role)
-# │     ├────────────────
-# │     │ local.role is "UNCONFIGURED"
-# │ Error: DR Protection Group ocid1.drprotectiongroup.oc1.eu-amsterdam-1.aaaaaaaanfdw4ic2ln7lnns5j4baj6xjcbgubweu5z44wplft46dw53w4wrq does not have a STANDBY role.

@@ -1,18 +1,3 @@
-variable "tenancy_ocid" {
-  description = "(Required) Tenancy OCID"
-  type        = string
-}
-
-variable "region_this" {
-  description = "this DR protection group region"
-  type        = string
-}
-
-variable "region_that" {
-  description = "that DR protection group region"
-  type        = string
-}
-
 variable "plan_id" {
   description = "(Required) The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`"
   type        = string
