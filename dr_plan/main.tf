@@ -23,9 +23,9 @@ resource "oci_disaster_recovery_dr_plan" "this" {
       error_message = "Error: ${var.dr_protection_group_id} cannot be used (DELETED)."
     }
 
-    precondition {
-      condition     = contains(["STANDBY"], local.role)
-      error_message = "Error: ${var.dr_protection_group_id} does not have a STANDBY role."
-    }
+    # precondition {
+    #   condition     = contains(["STANDBY"], local.role)
+    #   error_message = "Error: ${var.dr_protection_group_id} does not have a STANDBY role."
+    # }
   }
 }
